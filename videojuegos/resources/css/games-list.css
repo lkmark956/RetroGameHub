@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 2rem 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+header h1 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+header p {
+    text-align: center;
+    color: #666;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+}
+
+/* Navigation */
+nav {
+    background-color: #fff;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 1.5rem;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+    position: relative;
+}
+
+nav a:hover {
+    color: #666;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #333;
+    transform: scaleX(0);
+    transition: transform 0.2s;
+}
+
+nav a:hover::after {
+    transform: scaleX(1);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+    min-height: 60vh;
+}
+
+.page-title {
+    color: #333;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.game-card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-card:hover {
+    border-color: #999;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.game-card-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #e0e0e0;
+    background-color: #fafafa;
+}
+
+.game-card-header h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.game-card-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.game-card-body {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-info {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.game-info p {
+    margin: 0.5rem 0;
+}
+
+.game-description {
+    margin-bottom: 1.5rem;
+    color: #666;
+    font-size: 0.95rem;
+    flex: 1;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border-radius: 2px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background-color 0.2s;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    margin-top: auto;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid #333;
+    color: #333;
+}
+
+.btn-outline:hover {
+    background-color: #f5f5f5;
+}
+
+.empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #999;
+    padding: 3rem;
+}
+
+.empty-state p {
+    font-size: 1.1rem;
+}
+
+footer {
+    background-color: #fff;
+    border-top: 1px solid #e0e0e0;
+    color: #666;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .games-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .page-title {
+        font-size: 1.5rem;
+    }
+
+    nav a {
+        margin: 0 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .games-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 0.5rem;
+    }
+}
