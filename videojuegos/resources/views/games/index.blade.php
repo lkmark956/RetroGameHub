@@ -8,6 +8,10 @@
     <div class="games-grid">
         @forelse($games as $game)
             <div class="game-card">
+                <div class="game-image">
+                    <img src="{{ asset('images/games/' . $game['image']) }}" alt="{{ $game['title'] }}">
+                </div>
+                
                 <div class="game-card-header">
                     <h3>{{ $game['title'] }}</h3>
                     <div class="game-card-meta">{{ $game['console'] }} ({{ $game['year'] }})</div>
