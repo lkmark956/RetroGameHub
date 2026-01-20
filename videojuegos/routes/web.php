@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\AlumnoController;
 
 // Ruta raíz redirige a la lista de juegos
 Route::get('/', [GameController::class, 'index']);
@@ -11,3 +12,5 @@ Route::get('/games', [GameController::class, 'index'])->name('games.index');
 
 // Ruta para detalle de un juego
 Route::get('/games/{id}', [GameController::class, 'show'])->name('games.show');
+
+Route::get('/alumno-materias', [AlumnoController::class, 'mostrarMaterias']);
